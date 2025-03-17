@@ -22,7 +22,7 @@ function Home() {
         id="about-me"
         className="about w-[50%] flex flex-col justify-center items-center"
       >
-        <h2 className="text-3xl text-center font-extrabold">👋 Hey</h2>
+        <h2 className="text-3xl text-center font-extrabold">Hello, World!</h2>
         <strong>Thanks for checking out my website!</strong>
         <br />
         <p className="text-center">
@@ -33,14 +33,6 @@ function Home() {
           blending technical expertise with a human-centered approach.
         </p>
         <p className="text-center">
-          I thrive on tackling complex challenges 🛠️, whether it's building a
-          compiler, developing Chrome extensions, or leading community
-          initiatives like <strong>campus resource mapping</strong> to improve
-          student life. With experience in frontend and backend development, I
-          aim to create software that not only works but enhances the user
-          experience.
-        </p>
-        <p className="text-center">
           When I’m not coding, you can find me in the gym 🏋️‍♂️, playing video
           games 🎮, connecting with friends 👬🏼, or spending quality time with my
           girlfriend and our two cats 🐾❤️. To find out more about what I've
@@ -48,17 +40,31 @@ function Home() {
         </p>
         <br />
         <p id="details" className="text-center">
-          You can view the GitHub repository for this project
-          <a href="https://github.com/declanblanc/DeclansDigitalDevelopment">
+          You can view the GitHub repository for this project{" "}
+          <a
+            className="underline text-[#E6DB74]"
+            href="https://github.com/declanblanc/DeclansDigitalDevelopment"
+          >
             here
           </a>
           . <br />
           <br />
           If you have any questions or you're interested in working together,
-          feel free to
-          <a href="mailto:declanblanc@gmail.com"> email me</a>, message me on
-          <a href="https://www.linkedin.com/in/declanblanc/">LinkedIn</a>, or
-          contact me via Discord <code>@declanblanc</code>
+          feel free to{" "}
+          <a
+            className="underline text-[#E6DB74]"
+            href="mailto:declanblanc@gmail.com"
+          >
+            email me
+          </a>
+          , message me on{" "}
+          <a
+            className="underline text-[#E6DB74]"
+            href="https://www.linkedin.com/in/declanblanc/"
+          >
+            LinkedIn
+          </a>
+          , or contact me via Discord @declanblanc
         </p>
       </div>
     </div>
