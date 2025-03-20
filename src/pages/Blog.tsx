@@ -13,7 +13,7 @@ interface Comment {
 
 interface Post {
   id: number;
-  date: string;
+  created_at: string;
   title: string;
   body: string;
   comments: Comment[];
@@ -65,7 +65,7 @@ const Blog = () => {
 
     if (error) {
       console.error("Error adding comment:", error);
-    } else {
+    } else if (data) {
       // TODO: Make the page update automatically rather than forcing the user to refresh to see their comment.
       alert("Comment added successfully!");
       setNewComment("");
@@ -86,20 +86,21 @@ const Blog = () => {
   };
 
   return (
-    <div className="max-w-1/2 flex flex-col content-center">
-      {posts.length === 0 ? (
-        <p>No posts available</p>
-      ) : (
-        posts.map((post) => (
-          <div key={post.id} className="flex flex-col content-center">
-            <h2 className="text-3xl">{post.title}</h2>
-            <article className="prose">
+    <div className="flex flex-col items-center max-w-100%">
+      <div className="max-w-2/3">
+        {posts.length === 0 ? (
+          <p>No posts available</p>
+        ) : (
+          posts.map((post) => (
+            <div key={post.id} className="flex flex-col content-center">
+              <h2 className="text-3xl">{post.title}</h2>
+              <p>{post.created_at.replace(/T.*/, "")}</p>
               <ReactMarkdown
                 components={{
                   img: ({ node, ...props }) => (
                     <img
                       {...props}
-                      className="max-w-1/2 h-auto"
+                      className="justify-self-center max-w-1/2 h-auto p-5"
                       alt={props.alt || ""}
                     />
                   ),
@@ -107,56 +108,58 @@ const Blog = () => {
               >
                 {post.body}
               </ReactMarkdown>
-            </article>
-            <h3 className="text-2xl mt-4">Comments:</h3>
-            {post.comments.length === 0 ? (
-              <p>No comments available</p>
-            ) : (
-              post.comments.map((comment) => (
-                <div key={comment.id} className="mt-2">
-                  <div>
-                    <p className="font-bold">{comment.user_name}:</p>{" "}
-                    {comment.comment_content}
+              <h3 className="text-2xl mt-4">Comments:</h3>
+              {post.comments.length === 0 ? (
+                <p>No comments available</p>
+              ) : (
+                post.comments.map((comment) => (
+                  <div key={comment.id} className="mt-2">
+                    <div>
+                      <p className="font-bold">{comment.user_name}:</p>{" "}
+                      {comment.comment_content}
+                    </div>
+                    <small className="text-gray-500">
+                      {new Date(comment.created_at).toLocaleString()}
+                    </small>
                   </div>
-                  <small className="text-gray-500">
-                    {new Date(comment.created_at).toLocaleString()}
-                  </small>
-                </div>
-              ))
-            )}
-            {addingComment ? (
-              <form className="mt-4">
-                <h4 className="text-xl">Add a Comment:</h4>
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  value={userName}
-                  onChange={(e) => setUserName(e.target.value)}
-                  className="border p-2 w-full mt-2"
-                />
-                <textarea
-                  placeholder="Your Comment (max 200 characters)"
-                  value={newComment}
-                  onChange={(e) => setNewComment(e.target.value)}
-                  className="border p-2 w-full mt-2"
-                  maxLength={200}
-                />
-                <Button
-                  color="#34342F"
-                  onClick={() => handleAddComment(post.id)}
-                >
-                  Submit
+                ))
+              )}
+              {addingComment ? (
+                <form className="mt-4">
+                  <h4 className="text-xl">Add a Comment:</h4>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
+                    className="border p-2 w-full mt-2"
+                  />
+                  <textarea
+                    placeholder="Your Comment (max 200 characters)"
+                    value={newComment}
+                    onChange={(e) => setNewComment(e.target.value)}
+                    className="border p-2 w-full mt-2"
+                    maxLength={200}
+                  />
+                  <Button
+                    color="#34342F"
+                    onClick={() => handleAddComment(post.id)}
+                  >
+                    Submit
+                  </Button>
+                </form>
+              ) : (
+                <Button onClick={() => showCommentBox(true)}>
+                  Write a Comment
                 </Button>
-              </form>
-            ) : (
-              <Button onClick={() => showCommentBox(true)}>Comment</Button>
-            )}
+              )}
 
-            <br />
-            <hr />
-          </div>
-        ))
-      )}
+              <br />
+              <hr />
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 };

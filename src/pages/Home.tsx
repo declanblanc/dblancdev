@@ -1,5 +1,4 @@
 import me from "../assets/me.png";
-import { Divider } from "@mantine/core";
 
 function Home() {
   return (
@@ -32,6 +31,7 @@ function Home() {
           myself in coding 💻, community engagement, and leadership roles,
           blending technical expertise with a human-centered approach.
         </p>
+        <br />
         <p className="text-center">
           When I’m not coding, you can find me in the gym 🏋️‍♂️, playing video
           games 🎮, connecting with friends 👬🏼, or spending quality time with my
@@ -49,8 +49,8 @@ function Home() {
           </a>
           . <br />
           <br />
-          If you have any questions or you're interested in working together,
-          feel free to{" "}
+          If you have any questions, want to work together, or just feel like
+          chatting, feel free to{" "}
           <a
             className="underline text-[#E6DB74]"
             href="mailto:declanblanc@gmail.com"
@@ -64,7 +64,7 @@ function Home() {
           >
             LinkedIn
           </a>
-          , or contact me via Discord @declanblanc
+          , or contact me via Discord @declanblanc !
         </p>
       </div>
     </div>
