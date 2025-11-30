@@ -9,6 +9,9 @@
   font-style: normal;
 }
 
-a {
-  color: black;
+body {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
