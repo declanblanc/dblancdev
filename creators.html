@@ -7,76 +7,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Petit+Formal+Script&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
     />
     <title>Koding Kontent</title>
   </head>
   <body>
-    <a href="index.html">Home</a>
-    <h1>Koding Kontent!</h1>
-    <p>
-      I've put together the following list of creators with no particular order.
-      <br />
-      I simply poked around in my YouTube subscriptions.
-    </p>
-    <hr />
+    <h1><a href="index.html" style="color: #ae81ff">dblanc.dev</a></h1>
     <ul>
-    <li><a href="https://www.youtube.com/@BroCodez">Bro Code</a> - tutorials</li>
-    <li>
-      <a href="https://www.youtube.com/@NeetCode">NeedCode</a> &amp;
-      <a href="https://www.youtube.com/@NeetCodeIO">NeetCodeIO</a> - leetcode
-    </li>
-    <li>
-      <a href="https://www.youtube.com/@Fireship">Fireship</a> &amp;
-      <a href="https://www.youtube.com/@beyondfireship/">Beyond Fireship</a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/@Hyperplexed">Hyperplexed</a> - Frontend
-      Development
-    </li>
-    <li>
-      <a href="https://www.youtube.com/@TheCodingSloth">The Coding Sloth</a> -
-    </li>
-    <li>
-      <a href="https://www.youtube.com/@ThePrimeagen">ThePrimeagen</a> &amp;
-      <a href="https://www.youtube.com/@ThePrimeTimeagen">ThePrimeTime</a> yells
-      a lot
-    </li>
-    <li>
-      <a href="https://www.youtube.com/@DavesGarage">Dave&#39;s Garage</a> David
-      Plummer! Former Microsoft engineer, claim to fame is
-      <a href="https://www.youtube.com/watch?v=Ve95Nh690l0">Task Manager</a>!
-    </li>
-    <li><a href="https://www.youtube.com/@CodeAesthetic">CodeAesthetic</a> -</li>
-    <li><a href="https://www.youtube.com/@t3dotgg">Theo - t3.gg</a> -</li>
-    <li>
-      <a href="https://www.youtube.com/@SheafificationOfG/videos"
-        >Sheafification of G</a
-      >
-      I don&#39;t remember finding this channel
-    </li>
-    </ul>
-    <h3 id="coding-tech-adjacent">Coding/Tech Adjacent</h3>
-    <ul>
-    <li>
-      <a href="https://www.youtube.com/@bogxd">Bog</a>
-    </li>
-      <li><a href="https://www.youtube.com/@jvscholz">jvscholz</a></li>
-      <li><a href="https://www.youtube.com/@AZisk">Alex Ziskind</a></li>
-      <li><a href="https://www.youtube.com/@talksatgoogle">Talks at Google</a></li>
-      <li><a href="https://www.youtube.com/@GMTK/videos" >Game Maker&#39;s Toolkit</a></li>
       <li>
-        <a href="https://www.youtube.com/@PewDiePie/videos">PewDiePie</a> - Yes,
-        PewDiePie. He recently got really into Linux and engineering stuff. And
-        since he has time &amp; money to burn, the results are actually pretty
-        damn impressive! (Try not to feel bad.. lol)
+        <a href="https://www.linkedin.com/in/declanblanc" target="_blank"
+          >LinkedIn</a
+        >
       </li>
-      </ul>
-    <h3 id="math-science">Math/Science</h3>
-    <ul>
-      <li><a href="https://www.youtube.com/@3blue1brown">3Blue1Brown</a></li>
-      <li><a href="https://www.youtube.com/@veritasium">Veritasium</a></li>
+      <li><a style="color: #a7e22e">Coding/Tech Content Creators</a></li>
     </ul>
+    <hr />
+    <div id="markdown-content"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      // Fetch markdown
+      fetch("md/creators.md")
+        .then((response) => response.text())
+        .then((text) => {
+          // Convert markdown to HTML and insert it into the div
+          document.getElementById("markdown-content").innerHTML =
+            marked.parse(text);
+        });
+    </script>
   </body>
 </html>

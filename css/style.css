@@ -1,17 +1,33 @@
-/* 
-<weight>: Use a value from 100 to 700
-<uniquifier>: Use a unique and descriptive class name 
-*/
-.roboto-mono {
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
+:root {
+  --bg-color: #272921; /* global scope */
+  --font-color: white;
+  --link-color: #67d9ef;
+  --heading-color: #f92672;
+}
+html {
+  background-color: #272921;
+  color: white;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+body {
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 500;
   font-style: normal;
 }
 
-body {
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+h1 {
+  color: var(--heading-color);
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffd701;
+}
+
+a {
+  color: #67d9ef;
 }
