@@ -26,7 +26,7 @@ body {
   font-style: normal;
 }
 em {
-  color: #65d9ef;
+  color: var(--mkai-purple);
 }
 
 h1 {
@@ -42,4 +42,14 @@ h6 {
 
 a {
   color: #67d9ef;
+}
+
+strong {
+  color: var(--mkai-red);
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  color: grey;
 }
