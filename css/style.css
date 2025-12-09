@@ -3,9 +3,18 @@
   --font-color: white;
   --link-color: #67d9ef;
   --heading-color: #f92672;
+  --mkai-red: #f92572;
+  --mkai-yellow: #e6db74;
+  --mkai-green: #a7e22e;
+  --mkai-blue: #65d9ef;
+  --mkai-purple: #ae81ff;
+  --mkai-orange: #fd971e;
+  --mkai-background: #272822;
+  --mkai-accent-dark: #1e1f1c;
+  --mkai-accent-light: #34352f;
 }
 html {
-  background-color: #272921;
+  background-color: var(--mkai-background);
   color: white;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 500;
@@ -15,6 +24,9 @@ body {
   font-family: "IBM Plex Mono", monospace;
   font-weight: 500;
   font-style: normal;
+}
+em {
+  color: #65d9ef;
 }
 
 h1 {
