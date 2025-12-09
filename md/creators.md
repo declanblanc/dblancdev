@@ -15,6 +15,7 @@ These creators make pretty much entirely software engineering / coding / compute
 - [CodeAesthetic](https://www.youtube.com/@CodeAesthetic) - Opinionated formatter as a human being
 - [Theo - t3.gg](https://www.youtube.com/@t3dotgg) - Web dev guy!
 - [Sheafification of G](https://www.youtube.com/@SheafificationOfG/videos) - I honestly don't remember finding this channel
+- [Coding Jesus](https://www.youtube.com/@CodingJesus) - Ironically, I would say _CodingJesus_ is a bit "holier than thou" but there's a lot to be learned from someone like this even if they do come off as kind of an asshole sometimes.
 
 ## Coding/Tech Adjacent
 
