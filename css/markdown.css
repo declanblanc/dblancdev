@@ -1,0 +1,24 @@
+blockquote {
+  font-size: medium;
+  margin: 0.3em 0;
+  padding: 0.2em 1em;
+  border-left: 2px solid #a6e32e;
+  width: fit-content;
+}
+
+blockquote p {
+  margin: 0.5em 0;
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 0.5em;
+}
+
+code,
+pre {
+  font-size: large;
+}
