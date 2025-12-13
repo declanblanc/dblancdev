@@ -4,7 +4,7 @@ _Trying my best to stay focused and mindful of how I spend my time._
 
 ....
 
-Using an app called [Cold Turkey](https://getcoldturkey.com/), I have created the following blocks on my computer. They are all password protected by my wife, so I get to bug her if I ever *need* something unblocked, or to add new blocks.
+Using an app called [Cold Turkey](https://getcoldturkey.com/), I have created the following blocks on my computer. They are all password protected by my wife, so I get to bug her if I ever need something unblocked, or to add new blocks.
 
 > 💡
 > This is a setup that happens to work for me right now.
@@ -19,10 +19,11 @@ Using an app called [Cold Turkey](https://getcoldturkey.com/), I have created th
 
 > Work time blocks to help me stay focused during the day
 
-- Enabled: Monday - Friday 8:30am-5pm
-- Breaks: None
+**Enabled**: Monday - Friday 8:30am-5pm
 
-Blocked Sites/Apps:
+**Breaks**: None
+
+**Blocked Sites/Apps**:
 
 ```
 chess.com
@@ -38,10 +39,11 @@ tiktok.com
 
 > Work time blocks with some forgiveness. I can use these apps/sites if necessary, it's just annoying to open them
 
-- Enabled: Everyday 8am - 5pm
-- Breaks: 10 minute break whenever I want, but I have to type 222 characters of random words.
+**Enabled**: Everyday 8am - 5pm
 
-Blocked Sites/Apps:
+**Breaks**: 10 minute break whenever I want, but I have to type 222 characters of random words.
+
+**Blocked Sites/Apps**:
 
 ```
 amazon.com
@@ -56,10 +58,11 @@ mail.google.com
 
 > Sleepy time bucko, get off your computer.
 
-- Enabled: Everyday 9pm - 4am
-- Breaks: None
+**Enabled**: Everyday 9pm - 4am
 
-Blocked Sites/Apps:
+**Breaks**: None
+
+**Blocked Sites/Apps**:
 
 ```
 chess.com
@@ -79,10 +82,11 @@ voutube.com
 
 > Shouldn't need to spend more than an hour a day on these platforms.
 
-- Enabled: Always
-- Breaks: 60 min/day
+**Enabled**: Always
 
-Blocked Sites/Apps:
+**Breaks**: 60 min/day
+
+**Blocked Sites/Apps**:
 
 ```
 reddit.com

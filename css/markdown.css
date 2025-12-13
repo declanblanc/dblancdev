@@ -1,3 +1,9 @@
+@media (min-width: 1280px) {
+  #markdown-content {
+    margin: 2rem 10rem;
+  }
+}
+
 blockquote {
   font-size: medium;
   margin: 0.3em 0;
