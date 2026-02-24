@@ -21,6 +21,8 @@ ul { list-style: none; }
   --glow-g:      rgba(166, 226, 46,  0.28);
   --glow-g-s:    rgba(166, 226, 46,  0.55);
   --glow-b:      rgba(102, 217, 239, 0.28);
+  --glow-w:      rgba(255, 255, 255, 0.28);
+  --glow-w-s:    rgba(255, 255, 255, 0.44);
 }
 
 /* ─── Base ───────────────────────────────────────────────────────────────────── */
@@ -219,6 +221,7 @@ section { margin-bottom: 2.5rem; }
 .p-path   { color: var(--purple); }
 .p-cmd    { color: var(--yellow); }
 
+.hero-name { text-shadow: 0 0 18px var(--glow-w); } 
 .hero-row {
   display: flex;
   align-items: baseline;

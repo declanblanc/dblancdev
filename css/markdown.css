@@ -7,7 +7,9 @@
   font-size: 1.75rem;
   color: var(--text);
   font-weight: 700;
-  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 12px var(--glow-w-s);
+
   margin-bottom: 0.5rem;
 }
 
@@ -15,7 +17,7 @@
 #markdown-content h2 {
   display: flex;
   align-items: center;
-  font-size: 0.7rem;
+  font-size: 1.35rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -41,7 +43,7 @@
 }
 
 #markdown-content h3 {
-  font-size: 0.85rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--yellow);
   margin: 1.75rem 0 0.5rem;
