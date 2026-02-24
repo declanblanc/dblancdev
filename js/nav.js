@@ -1,7 +1,6 @@
 // ─── Navigation ───────────────────────────────────────────────────────────────
 // To add a new page to the nav, add an entry to NAV_LINKS below.
 const NAV_LINKS = [
-  { href: "index.html", label: "home" },
   { href: "posts.html", label: "posts" },
 ];
 
@@ -18,7 +17,7 @@ const NAV_LINKS = [
   header.innerHTML = `
     <nav class="nav">
       <a href="index.html" class="nav-brand">dblanc.dev</a>
-      <ul class="nav-links">${items}</ul>
+      <ul class="nav-links nav-links--inline">${items}</ul>
     </nav>`;
 
   const footer = document.createElement("footer");

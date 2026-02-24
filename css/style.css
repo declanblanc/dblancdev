@@ -146,7 +146,6 @@ main.container > *:nth-child(5) { animation-delay: 0.36s; }
   padding: 0.875rem 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 .nav-brand {
   color: var(--green);
@@ -156,7 +155,7 @@ main.container > *:nth-child(5) { animation-delay: 0.36s; }
   text-shadow: 0 0 12px var(--glow-g-s);
 }
 .nav-brand:hover { opacity: 0.8; color: var(--green); }
-.nav-links { display: flex; gap: 1.75rem; }
+.nav-links { display: flex; gap: 1.75rem; margin-left: 1.75rem; }
 .nav-links a {
   color: var(--muted);
   font-size: 0.8rem;
