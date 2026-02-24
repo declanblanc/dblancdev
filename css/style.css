@@ -119,7 +119,7 @@ body::after {
   height: 1em;
   background: var(--green);
   margin-left: 0.15em;
-  vertical-align: text-bottom;
+  vertical-align: -0.09em;
   box-shadow: 0 0 8px var(--glow-g-s), 0 0 18px var(--glow-g);
 }
 @media (prefers-reduced-motion: no-preference) {
