@@ -4,12 +4,12 @@ ul { list-style: none; }
 
 /* ─── Tokens ─────────────────────────────────────────────────────────────────── */
 :root {
-  --bg:        #1a1b18;
+  --bg:        #24261d;
   --surface:   #272822;
   --surface-2: #2d2e29;
   --border:    #3e3f39;
   --text:      #f8f8f2;
-  --muted:     #a704ed;
+  --muted:     #84877c;
   --green:     #a6e22e;
   --blue:      #66d9ef;
   --yellow:    #e6db74;
