@@ -28,8 +28,8 @@ Static personal website (dblanc.dev) — no build system, bundler, or package ma
 
 1. Create `md/<slug>.md` with content.
 2. Copy `blocking.html` as a template — update `<title>` and the `fetch("md/<slug>.md")` call.
-3. Add an entry to the `NAV_LINKS` array in `js/nav.js` — this is the **only** place the nav is defined.
-4. Add a link in the `notes` section of `index.html`.
+3. Add an `<li>` entry to `posts.html` — this is the only place the post list lives.
+4. To promote a page to the nav, add an entry to `NAV_LINKS` in `js/nav.js`.
 
 ## CSS conventions
 

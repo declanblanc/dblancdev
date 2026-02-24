@@ -1,9 +1,8 @@
 // ─── Navigation ───────────────────────────────────────────────────────────────
 // To add a new page to the nav, add an entry to NAV_LINKS below.
 const NAV_LINKS = [
-  { href: "index.html",    label: "home" },
-  { href: "creators.html", label: "creators" },
-  { href: "blocking.html", label: "blocking" },
+  { href: "index.html", label: "home" },
+  { href: "posts.html", label: "posts" },
 ];
 
 (function () {
