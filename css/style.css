@@ -359,3 +359,5 @@ section { margin-bottom: 3.5rem; }
   font-size: 0.75rem;
   color: var(--muted);
 }
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--text); }
