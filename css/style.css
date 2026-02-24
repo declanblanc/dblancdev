@@ -1,55 +1,194 @@
+/* ─── Reset ──────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ul { list-style: none; }
+
+/* ─── Tokens ─────────────────────────────────────────────────────────────────── */
 :root {
-  --bg-color: #272921; /* global scope */
-  --font-color: white;
-  --link-color: #67d9ef;
-  --heading-color: #f92672;
-  --mkai-red: #f92572;
-  --mkai-yellow: #e6db74;
-  --mkai-green: #a7e22e;
-  --mkai-blue: #65d9ef;
-  --mkai-purple: #ae81ff;
-  --mkai-orange: #fd971e;
-  --mkai-background: #272822;
-  --mkai-accent-dark: #1e1f1c;
-  --mkai-accent-light: #34352f;
+  --bg:        #1a1b18;
+  --surface:   #272822;
+  --surface-2: #2d2e29;
+  --border:    #3e3f39;
+  --text:      #f8f8f2;
+  --muted:     #75715e;
+  --green:     #a6e22e;
+  --blue:      #66d9ef;
+  --yellow:    #e6db74;
+  --orange:    #fd971f;
+  --pink:      #f92672;
+  --purple:    #ae81ff;
+  --font:      "IBM Plex Mono", monospace;
 }
+
+/* ─── Base ───────────────────────────────────────────────────────────────────── */
 html {
-  background-color: var(--mkai-background);
-  color: white;
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: 500;
-  font-style: normal;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
-body {
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: 500;
-  font-style: normal;
-}
-em {
-  color: var(--mkai-purple);
+a             { color: var(--blue); text-decoration: none; }
+a:hover       { color: var(--green); }
+em            { color: var(--purple); }
+strong        { color: var(--pink); }
+h1, h2, h3, h4, h5, h6 { line-height: 1.3; font-weight: 600; }
+
+/* ─── Layout ─────────────────────────────────────────────────────────────────── */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
 }
 
-h1 {
-  color: var(--heading-color);
+/* ─── Nav ────────────────────────────────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
 }
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #ffd701;
+.nav {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0.875rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  color: var(--green);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.nav-brand:hover { color: var(--green); opacity: 0.75; }
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+}
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.8rem;
+  transition: color 0.15s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--text); }
+.nav-links a.active  { color: var(--green); }
+
+/* ─── Sections ───────────────────────────────────────────────────────────────── */
+section { margin-bottom: 3rem; }
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--green);
+  margin-bottom: 1.25rem;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
 }
 
-a {
-  color: #67d9ef;
+/* ─── Hero ───────────────────────────────────────────────────────────────────── */
+.hero { padding: 1.5rem 0 0.5rem; }
+.hero h1 {
+  font-size: 1.75rem;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+.hero .tagline {
+  color: var(--muted);
+  font-size: 0.875rem;
 }
 
-strong {
-  color: var(--mkai-red);
+/* ─── About ──────────────────────────────────────────────────────────────────── */
+.about-text {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 60ch;
 }
 
-#footer {
-  position: absolute;
-  bottom: 0;
-  color: grey;
+/* ─── Project cards ──────────────────────────────────────────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 520px) { .card-grid { grid-template-columns: 1fr; } }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.1rem 1.25rem;
+  transition: border-color 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.card:hover { border-color: var(--green); }
+.card h3 { font-size: 0.875rem; color: var(--text); }
+.card p   { font-size: 0.8rem;   color: var(--muted); }
+.card .card-link {
+  display: inline-block;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--blue);
+}
+.card .card-link:hover { color: var(--green); }
+
+/* ─── Notes list ─────────────────────────────────────────────────────────────── */
+.notes-list { display: flex; flex-direction: column; }
+.notes-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.notes-list li:first-child { border-top: 1px solid var(--border); }
+.notes-list a    { font-size: 0.875rem; }
+.notes-list .meta {
+  font-size: 0.75rem;
+  color: var(--muted);
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+/* ─── Links list ─────────────────────────────────────────────────────────────── */
+.links-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.links-list a {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.links-list a:hover { color: var(--blue); }
+
+/* ─── Placeholder (remove when content is added) ─────────────────────────────── */
+.placeholder {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted);
+  padding: 1.25rem;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
 }

@@ -1,30 +1,80 @@
-@media (min-width: 1280px) {
-  #markdown-content {
-    margin: 2rem 10rem;
-  }
+/* Styles for markdown-rendered content pages */
+
+#markdown-content { max-width: 65ch; }
+
+#markdown-content h1 {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+#markdown-content h2 {
+  font-size: 1rem;
+  color: var(--yellow);
+  margin: 2rem 0 0.6rem;
+}
+#markdown-content h3 {
+  font-size: 0.9rem;
+  color: var(--yellow);
+  margin: 1.5rem 0 0.5rem;
+}
+#markdown-content p {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 0.9rem;
+}
+#markdown-content em     { color: var(--purple); }
+#markdown-content strong { color: var(--pink); }
+#markdown-content a      { color: var(--blue); }
+#markdown-content a:hover { color: var(--green); }
+
+#markdown-content ul,
+#markdown-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+#markdown-content ul { list-style: disc; }
+#markdown-content ol { list-style: decimal; }
+#markdown-content li {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0.25rem;
 }
 
-blockquote {
-  font-size: medium;
-  margin: 0.3em 0;
-  padding: 0.2em 1em;
-  border-left: 2px solid #a6e32e;
-  width: fit-content;
+#markdown-content pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
 }
-
-blockquote p {
-  margin: 0.5em 0;
+#markdown-content code {
+  font-family: var(--font);
+  font-size: 0.875rem;
+  color: var(--yellow);
 }
+#markdown-content pre code { color: var(--text); }
 
-blockquote cite {
+#markdown-content blockquote {
+  border-left: 2px solid var(--green);
+  padding: 0.35rem 1rem;
+  margin: 1rem 0;
+}
+#markdown-content blockquote p {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+}
+#markdown-content blockquote cite {
   display: block;
   text-align: right;
-  font-size: 0.9em;
-  color: #777;
-  margin-top: 0.5em;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.35rem;
 }
-
-code,
-pre {
-  font-size: large;
+#markdown-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
 }
