@@ -133,7 +133,7 @@ main.container > *:nth-child(5) { animation-delay: 0.36s; }
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10;
   background: rgba(26, 27, 21, 0.88);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(12px);
