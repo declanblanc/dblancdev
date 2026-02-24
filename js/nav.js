@@ -21,7 +21,14 @@ const NAV_LINKS = [
       <ul class="nav-links">${items}</ul>
     </nav>`;
 
-  const inject = () => document.body.prepend(header);
+  const footer = document.createElement("footer");
+  footer.className = "site-footer";
+  footer.innerHTML = `<p><a href="https://github.com/declanblanc" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/declanblanc" target="_blank">LinkedIn</a></p>`;
+
+  const inject = () => {
+    document.body.prepend(header);
+    document.body.append(footer);
+  };
   document.readyState === "loading"
     ? document.addEventListener("DOMContentLoaded", inject)
     : inject();
