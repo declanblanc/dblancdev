@@ -11,11 +11,13 @@
   font-size: 1rem;
   color: var(--yellow);
   margin: 2rem 0 0.6rem;
+  text-shadow: 0 0 10px rgba(230, 219, 116, 0.25);
 }
 #markdown-content h3 {
   font-size: 0.9rem;
   color: var(--yellow);
   margin: 1.5rem 0 0.5rem;
+  text-shadow: 0 0 10px rgba(230, 219, 116, 0.2);
 }
 #markdown-content p {
   font-size: 0.875rem;
@@ -59,6 +61,7 @@
 
 #markdown-content blockquote {
   border-left: 2px solid var(--green);
+  box-shadow: -2px 0 8px rgba(166, 226, 46, 0.2);
   padding: 0.35rem 1rem;
   margin: 1rem 0;
 }
