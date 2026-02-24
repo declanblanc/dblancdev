@@ -126,7 +126,7 @@ main.container > *:nth-child(5) { animation-delay: 0.36s; }
 .container {
   max-width: 720px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 5rem;
+  padding: 1.5rem 1.5rem 5rem;
 }
 
 /* ─── Nav ────────────────────────────────────────────────────────────────────── */
@@ -168,7 +168,7 @@ main.container > *:nth-child(5) { animation-delay: 0.36s; }
 }
 
 /* ─── Sections ───────────────────────────────────────────────────────────────── */
-section { margin-bottom: 3.5rem; }
+section { margin-bottom: 2.5rem; }
 
 /* "// label ────────" heading style */
 .section-label {
