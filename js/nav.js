@@ -25,6 +25,7 @@ const NAV_LINKS = [
   footer.innerHTML = `<p><a href="https://github.com/declanblanc" target="_blank">GitHub</a> · <a href="https://www.linkedin.com/in/declanblanc" target="_blank">LinkedIn</a></p>`;
 
   const inject = () => {
+    if (document.querySelector(".site-header") || document.querySelector(".site-footer")) return;
     document.body.prepend(header);
     document.body.append(footer);
   };
