@@ -1,30 +1,172 @@
-@media (min-width: 1280px) {
-  #markdown-content {
-    margin: 2rem 10rem;
-  }
+/* Styles for markdown-rendered content pages */
+
+#markdown-content { max-width: 65ch; }
+
+/* ── Headings ─────────────────────────────────────────────── */
+#markdown-content h1 {
+  font-size: 1.75rem;
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 
-blockquote {
-  font-size: medium;
-  margin: 0.3em 0;
-  padding: 0.2em 1em;
-  border-left: 2px solid #a6e32e;
-  width: fit-content;
+/* Mirror the site's .section-label style */
+#markdown-content h2 {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--green);
+  margin: 2.5rem 0 1rem;
+  text-shadow: 0 0 12px var(--glow-g);
+}
+#markdown-content h2::before {
+  content: '//';
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-right: 0.45em;
+  text-shadow: none;
+}
+#markdown-content h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border) 0%, transparent 80%);
+  margin-left: 0.75rem;
 }
 
-blockquote p {
-  margin: 0.5em 0;
+#markdown-content h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--yellow);
+  margin: 1.75rem 0 0.5rem;
+  text-shadow: 0 0 10px rgba(230, 219, 116, 0.2);
+}
+#markdown-content h3::before {
+  content: '> ';
+  color: var(--muted);
+  font-weight: 400;
 }
 
-blockquote cite {
+/* ── Body text ────────────────────────────────────────────── */
+#markdown-content p {
+  font-size: 0.9rem;
+  color: rgba(248, 248, 242, 0.87);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+#markdown-content em     { color: var(--purple); font-style: italic; }
+#markdown-content strong { color: var(--pink); }
+#markdown-content a      { color: var(--blue); }
+#markdown-content a:hover { color: var(--green); }
+
+/* ── Lists ────────────────────────────────────────────────── */
+#markdown-content ul,
+#markdown-content ol {
+  padding-left: 0;
+  margin-bottom: 1.1rem;
+  list-style: none;
+}
+#markdown-content li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  color: rgba(248, 248, 242, 0.87);
+  line-height: 1.75;
+  margin-bottom: 0.35rem;
+}
+/* Terminal arrow bullets */
+#markdown-content ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--border);
+  font-size: 0.85rem;
+  transition: color 0.15s;
+}
+#markdown-content ul li:hover::before { color: var(--green); }
+/* Ordered: manual counter so we can style freely */
+#markdown-content ol { counter-reset: ol-counter; }
+#markdown-content ol li { counter-increment: ol-counter; }
+#markdown-content ol li::before {
+  content: counter(ol-counter) '.';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ── Code ─────────────────────────────────────────────────── */
+#markdown-content pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--yellow);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+#markdown-content code {
+  font-family: var(--font);
+  font-size: 0.825rem;
+  color: var(--yellow);
+  background: var(--surface);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+#markdown-content pre code {
+  color: var(--text);
+  background: none;
+  padding: 0;
+  border: none;
+  font-size: 0.825rem;
+}
+
+/* ── Blockquote ───────────────────────────────────────────── */
+#markdown-content blockquote {
+  border-left: 2px solid var(--green);
+  box-shadow: -3px 0 12px rgba(166, 226, 46, 0.15);
+  background: rgba(166, 226, 46, 0.03);
+  padding: 0.6rem 1rem;
+  margin: 1.25rem 0;
+  border-radius: 0 4px 4px 0;
+}
+#markdown-content blockquote p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
+#markdown-content blockquote cite {
   display: block;
   text-align: right;
-  font-size: 0.9em;
-  color: #777;
-  margin-top: 0.5em;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.35rem;
 }
 
-code,
-pre {
-  font-size: large;
+/* ── HR ───────────────────────────────────────────────────── */
+#markdown-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+  position: relative;
+}
+#markdown-content hr::after {
+  content: '···';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg);
+  color: var(--border);
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
 }
