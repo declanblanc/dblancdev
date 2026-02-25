@@ -130,7 +130,8 @@ body::after {
 
 /* ─── Layout ─────────────────────────────────────────────────────────────────── */
 .container {
-  max-width: 720px;
+  max-width: min(1200px, 90vw);
+  width: 100%;
   margin: 0 auto;
   padding: 1.5rem 1.5rem 5rem;
 }
@@ -147,7 +148,7 @@ body::after {
   box-shadow: 0 1px 0 var(--glow-g);
 }
 .nav {
-  max-width: 720px;
+  max-width: min(1200px, 90vw);
   margin: 0 auto;
   padding: 0.875rem 1.5rem;
   display: flex;
@@ -240,7 +241,6 @@ section { margin-bottom: 2.5rem; }
   font-size: 0.875rem;
   color: var(--muted);
   line-height: 1.8;
-  max-width: 60ch;
 }
 .about-text__closing { margin-top: 1rem; }
 

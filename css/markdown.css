@@ -1,6 +1,6 @@
 /* Styles for markdown-rendered content pages */
 
-#markdown-content { max-width: 65ch; }
+#markdown-content { width: 100%; }
 
 /* ── Headings ─────────────────────────────────────────────── */
 #markdown-content h1 {
