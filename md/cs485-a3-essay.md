@@ -14,7 +14,7 @@ When considering the legal implications of creating a UI that looks like another
 
 I have yet to spend enough time coding with AI to have this happen to me, though I assume it is a common occurrence due to the fact that AI models are trained on existing data. In class, many of us are creating nearly 1:1 clones of existing websites. Even though our intention is not to deploy these sites and make money from them, this distinction is irrelevant in the eyes of copyright law. Still, I don't believe we should worry about ending up in court. Copyright is a civil matter, meaning it is entirely up to the "injured" party to file a lawsuit seeking damages (Legal Information Institute, n.d.; 17 U.S.C. § 501, 1976). Most companies understand that it is not worth their time to chase down every individual that infringed on their copyright, and it would also be a public relations nightmare. Imagine if the Walt Disney Company sued every child who drew a crude drawing of Mickey Mouse. With this in mind, if my group received an email from Discord threatening legal action, I would be quite surprised and of course swiftly take down the clone.
 
-**Citations**
+## Citations
 
 Boldrin, M., & Levine, D. K. (2008). Against Intellectual Monopoly. Cambridge University Press.
 
