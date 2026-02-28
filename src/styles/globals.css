@@ -17,6 +17,10 @@ ul { list-style: none; }
   --pink:        #f92672;
   --purple:      #ae81ff;
   --font:        var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+
+  /* Phosphor glow values — used here and in markdown.css */
+  --glow-g:   0 0 8px rgba(166, 226, 46, 0.6), 0 0 22px rgba(166, 226, 46, 0.22);
+  --glow-w-s: 0 0 10px rgba(248, 248, 242, 0.28), 0 0 22px rgba(248, 248, 242, 0.1);
 }
 
 /* ─── Base ───────────────────────────────────────────────────────────────────── */
@@ -32,8 +36,24 @@ html {
   scrollbar-color: var(--border) var(--bg);
 }
 
-/* Green top border — visual signature on every page */
+/* Green top border + phosphor glow — visual signature on every page */
 body { border-top: 2px solid var(--green); }
+
+/* Phosphor bleed along the top green bar */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--green);
+  box-shadow:
+    0 0  8px rgba(166, 226, 46, 0.85),
+    0 0 20px rgba(166, 226, 46, 0.5),
+    0 0 48px rgba(166, 226, 46, 0.25),
+    0 0 90px rgba(166, 226, 46, 0.1);
+  pointer-events: none;
+  z-index: 9998;
+}
 
 a       { color: var(--blue); text-decoration: none; transition: color 0.15s; }
 a:hover { color: var(--green); }
@@ -51,17 +71,17 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.3; font-weight: 600; }
 ::selection { background: rgba(166, 226, 46, 0.18); color: var(--text); }
 
 /* ─── CRT atmosphere ─────────────────────────────────────────────────────────── */
-/* Vignette — subtle edge darkening for depth */
+/* Vignette — edge darkening that actually reads */
 html::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 38%, transparent 52%, rgba(0, 0, 0, 0.38) 100%);
+  background: radial-gradient(ellipse at 50% 38%, transparent 36%, rgba(0, 0, 0, 0.35) 100%);
   pointer-events: none;
   z-index: 9996;
 }
 
-/* Scanlines — barely-there horizontal bands */
+/* Scanlines — visible CRT bands */
 body::before {
   content: '';
   position: fixed;
@@ -70,11 +90,37 @@ body::before {
     to bottom,
     transparent 0px,
     transparent 3px,
-    rgba(0, 0, 0, 0.08) 3px,
-    rgba(0, 0, 0, 0.08) 4px
+    rgba(0, 0, 0, 0.22) 3px,
+    rgba(0, 0, 0, 0.22) 4px
   );
   pointer-events: none;
   z-index: 9997;
+}
+
+/* Grain noise + flicker — phosphor aging */
+@keyframes crt-flicker {
+  0%,   18%,  22%,  25%,  55%,  58%,  100% { opacity: 1; }
+  19%  { opacity: 0.965; }
+  21%  { opacity: 0.99;  }
+  24%  { opacity: 0.96;  }
+  56%  { opacity: 0.975; }
+  57%  { opacity: 1;     }
+}
+
+html::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 9995;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html::after { animation: crt-flicker 10s step-end infinite; }
 }
 
 /* ─── Entrance animations ────────────────────────────────────────────────────── */
@@ -104,6 +150,7 @@ body::before {
   background: var(--green);
   margin-left: 0.15em;
   vertical-align: -0.09em;
+  box-shadow: 0 0 6px rgba(166, 226, 46, 0.95), 0 0 16px rgba(166, 226, 46, 0.55);
 }
 @media (prefers-reduced-motion: no-preference) {
   .cursor { animation: blink 1.1s step-end infinite; }
@@ -140,6 +187,7 @@ body::before {
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  text-shadow: var(--glow-g);
 }
 .nav-brand:hover { opacity: 0.8; color: var(--green); }
 .nav-links { display: flex; gap: 1.75rem; margin-left: 1.75rem; }
@@ -151,6 +199,7 @@ body::before {
 .nav-links a:hover    { color: var(--text); }
 .nav-links a.active   {
   color: var(--green);
+  text-shadow: 0 0 6px rgba(166, 226, 46, 0.55);
 }
 
 /* ─── Sections ───────────────────────────────────────────────────────────────── */
@@ -166,6 +215,7 @@ section { margin-bottom: 2.5rem; }
   letter-spacing: 0.12em;
   color: var(--green);
   margin-bottom: 1.25rem;
+  text-shadow: var(--glow-g);
 }
 .section-label::before {
   content: '//';
