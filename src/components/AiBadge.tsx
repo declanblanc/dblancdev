@@ -13,6 +13,7 @@ export default function AiBadge() {
 
   return (
     <span
+      role="button"
       className={`ai-badge${open ? ' open' : ''}`}
       tabIndex={0}
       onClick={(e) => { e.stopPropagation(); setOpen(o => !o) }}
