@@ -362,6 +362,15 @@ section { margin-bottom: 2.5rem; }
 }
 
 /* ─── Footer ─────────────────────────────────────────────────────────────────── */
+.post-disclaimer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 1.5rem;
