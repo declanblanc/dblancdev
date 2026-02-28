@@ -56,7 +56,7 @@ html::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 38%, transparent 52%, rgba(0, 0, 0, 0.28) 100%);
+  background: radial-gradient(ellipse at 50% 38%, transparent 52%, rgba(0, 0, 0, 0.38) 100%);
   pointer-events: none;
   z-index: 9996;
 }
@@ -70,8 +70,8 @@ body::before {
     to bottom,
     transparent 0px,
     transparent 3px,
-    rgba(0, 0, 0, 0.04) 3px,
-    rgba(0, 0, 0, 0.04) 4px
+    rgba(0, 0, 0, 0.08) 3px,
+    rgba(0, 0, 0, 0.08) 4px
   );
   pointer-events: none;
   z-index: 9997;
