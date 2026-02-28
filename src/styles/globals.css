@@ -76,7 +76,7 @@ html::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 38%, transparent 36%, rgba(0, 0, 0, 0.65) 100%);
+  background: radial-gradient(ellipse at 50% 38%, transparent 36%, rgba(0, 0, 0, 0.35) 100%);
   pointer-events: none;
   z-index: 9996;
 }
