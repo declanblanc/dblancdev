@@ -1,16 +1,10 @@
 import { config, collection, fields } from '@keystatic/core'
 
 export default config({
-  storage:
-    process.env.KEYSTATIC_STORAGE === 'github'
-      ? {
+  storage: {
           kind: 'github',
           repo: 'declanblanc/dblancdev',
-        }
-      : {
-          kind: 'local',
-        },
-
+  },
   collections: {
     posts: collection({
       label: 'Posts',
