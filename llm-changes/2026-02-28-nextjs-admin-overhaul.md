@@ -85,7 +85,7 @@ To enable the admin in production, create a GitHub App and set these Vercel env 
 - `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`
 - `KEYSTATIC_STORAGE=github`
 
-See the plan at `/Users/dblanc/.claude/plans/tidy-leaping-engelbart.md` for full GitHub App creation steps.
+See GitHub's official docs for creating a GitHub App: https://docs.github.com/en/apps/creating-github-apps/creating-a-github-app for full GitHub App creation steps.
 
 ## Verification
 

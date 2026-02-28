@@ -17,7 +17,8 @@ export default function AiBadge() {
       className={`ai-badge${open ? ' open' : ''}`}
       tabIndex={0}
       onClick={(e) => { e.stopPropagation(); setOpen(o => !o) }}
-      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.stopPropagation(); setOpen(o => !o) } }}
+      aria-expanded={open}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); setOpen(o => !o) } }}
     >
       AI?
       <span className="ai-tooltip">
