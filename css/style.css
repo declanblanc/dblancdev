@@ -362,6 +362,20 @@ section { margin-bottom: 2.5rem; }
 }
 
 /* ─── Footer ─────────────────────────────────────────────────────────────────── */
+.section-label-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+.section-label-row .section-label {
+  flex: 1;
+  margin-bottom: 0;
+}
+.section-label-row .ai-badge {
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+
 /* ─── AI Disclaimer Badge ────────────────────────────────────────────────────── */
 .ai-disclaimer-wrap {
   display: flex;
