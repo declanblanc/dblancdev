@@ -19,15 +19,14 @@ const markdocConfig: Config = {
 
 function NextImage({ src, alt }: { src: string; alt?: string }) {
   return (
-    <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
-      <Image
-        src={src}
-        alt={alt ?? ''}
-        fill
-        sizes="(max-width: 720px) 100vw, 720px"
-        style={{ objectFit: 'contain' }}
-      />
-    </div>
+    <Image
+      src={src}
+      alt={alt ?? ''}
+      width={0}
+      height={0}
+      sizes="(max-width: 720px) 100vw, 720px"
+      style={{ width: '100%', height: 'auto' }}
+    />
   )
 }
 
