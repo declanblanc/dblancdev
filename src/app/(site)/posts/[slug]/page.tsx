@@ -1,11 +1,34 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import React from 'react'
+import Image from 'next/image'
 import { createReader } from '@keystatic/core/reader'
-import Markdoc from '@markdoc/markdoc'
+import Markdoc, { type Config } from '@markdoc/markdoc'
 import keystaticConfig from '../../../../../keystatic.config'
 import Breadcrumb from '@/components/Breadcrumb'
 import '@/styles/markdown.css'
+
+const markdocConfig: Config = {
+  nodes: {
+    image: {
+      ...Markdoc.nodes.image,
+      render: 'NextImage',
+    },
+  },
+}
+
+function NextImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <Image
+      src={src}
+      alt={alt ?? ''}
+      width={1200}
+      height={630}
+      sizes="(max-width: 720px) 100vw, 720px"
+      style={{ maxWidth: '100%', height: 'auto' }}
+    />
+  )
+}
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -33,8 +56,8 @@ export default async function PostPage({ params }: Props) {
   if (!post) notFound()
 
   const { node } = await post.content()
-  const transformed = Markdoc.transform(node)
-  const rendered = Markdoc.renderers.react(transformed, React)
+  const transformed = Markdoc.transform(node, markdocConfig)
+  const rendered = Markdoc.renderers.react(transformed, React, { components: { NextImage } })
 
   return (
     <>

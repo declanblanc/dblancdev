@@ -25,8 +25,8 @@ export default config({
           label: 'Content',
           options: {
             image: {
-              directory: 'public/images/posts',
-              publicPath: '/images/posts/',
+              directory: 'public/images/posts/{slug}',
+              publicPath: '/images/posts/{slug}/',
             },
           },
         }),
