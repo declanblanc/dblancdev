@@ -22,10 +22,10 @@ function NextImage({ src, alt }: { src: string; alt: string }) {
     <Image
       src={src}
       alt={alt ?? ''}
-      width={1200}
-      height={630}
+      width={0}
+      height={0}
       sizes="(max-width: 720px) 100vw, 720px"
-      style={{ maxWidth: '100%', height: 'auto' }}
+      style={{ width: '100%', height: 'auto', aspectRatio: 'auto' }}
     />
   )
 }
