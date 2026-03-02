@@ -153,6 +153,15 @@
   margin-top: 0.35rem;
 }
 
+/* ── Images ───────────────────────────────────────────────── */
+.prose img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  margin: 1.25rem 0;
+}
+
 /* ── HR ───────────────────────────────────────────────────── */
 .prose hr {
   border: none;
