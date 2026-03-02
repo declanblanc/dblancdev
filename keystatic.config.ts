@@ -23,6 +23,12 @@ export default config({
         }),
         content: fields.markdoc({
           label: 'Content',
+          options: {
+            image: {
+              directory: 'public/images/posts',
+              publicPath: '/images/posts/',
+            },
+          },
         }),
       },
     }),
