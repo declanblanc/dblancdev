@@ -15,6 +15,12 @@ const markdocConfig: Config = {
       render: 'NextImage',
     },
   },
+  tags: {
+    sup: {
+      render: 'sup',
+      inline: true,
+    },
+  },
 }
 
 function NextImage({ src, alt }: { src: string; alt?: string }) {

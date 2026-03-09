@@ -162,6 +162,29 @@
   margin: 1.25rem 0;
 }
 
+/* ── Tables ───────────────────────────────────────────────── */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+}
+.prose th,
+.prose td {
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.75rem;
+  text-align: left;
+  color: rgba(248, 248, 242, 0.87);
+}
+.prose th {
+  background: var(--surface);
+  color: var(--green);
+  font-weight: 600;
+}
+.prose tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
 /* ── HR ───────────────────────────────────────────────────── */
 .prose hr {
   border: none;
