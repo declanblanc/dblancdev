@@ -1,9 +1,6 @@
 import { config, collection, fields } from '@keystatic/core'
-<<<<<<< Updated upstream
-=======
 import { mark } from '@keystatic/core/content-components'
 import { createElement } from 'react'
->>>>>>> Stashed changes
 
 export default config({
   storage: {
@@ -34,8 +31,6 @@ export default config({
               publicPath: '/images/posts/{slug}/',
             },
           },
-<<<<<<< Updated upstream
-=======
           components: {
             sup: mark({
               label: 'Superscript',
@@ -44,7 +39,6 @@ export default config({
               tag: 'sup',
             }),
           },
->>>>>>> Stashed changes
         }),
       },
     }),
