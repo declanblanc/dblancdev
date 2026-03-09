@@ -1,4 +1,5 @@
 import { config, collection, fields } from '@keystatic/core'
+import { inline } from '@keystatic/core/content-components'
 
 export default config({
   storage: {
@@ -28,6 +29,12 @@ export default config({
               directory: 'public/images/posts/{slug}',
               publicPath: '/images/posts/{slug}/',
             },
+          },
+          components: {
+            sup: inline({
+              label: 'Superscript',
+              schema: {},
+            }),
           },
         }),
       },
