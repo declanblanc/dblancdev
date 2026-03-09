@@ -1,5 +1,6 @@
 import { config, collection, fields } from '@keystatic/core'
-import { inline } from '@keystatic/core/content-components'
+import { mark } from '@keystatic/core/content-components'
+import { createElement } from 'react'
 
 export default config({
   storage: {
@@ -31,9 +32,11 @@ export default config({
             },
           },
           components: {
-            sup: inline({
+            sup: mark({
               label: 'Superscript',
+              icon: createElement('sup', null, 'sup'),
               schema: {},
+              tag: 'sup',
             }),
           },
         }),
