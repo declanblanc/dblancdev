@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reclaiming Your Time — Mindful Media Podcast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent-pink: #f92672;
+      --accent-yellow: #e6db74;
+      --accent-purple: #ae81ff;
+      --accent-soft: #2d2a1e;
+      --bg: #272822;
+      --surface: #1e1f1c;
+      --surface-raised: #2d2e2a;
+      --border: #3e3d38;
+      --border-light: #35342f;
+      --text-primary: #f8f8f2;
+      --text-secondary: #a59f85;
+      --text-muted: #75715e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .wrap { max-width: 680px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent-yellow);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 22px;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 14px 0;
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+      margin-bottom: 32px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .meta-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent-purple);
+      flex-shrink: 0;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .summary {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .summary strong { color: var(--text-primary); font-weight: 500; }
+
+    hr {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 32px 0;
+    }
+
+    .timestamps { margin-bottom: 32px; }
+
+    .ts-row {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 0.5px solid var(--border-light);
+    }
+
+    .ts-row:first-child { border-top: 0.5px solid var(--border-light); }
+
+    .ts-time {
+      font-size: 12px;
+      font-family: 'Courier New', monospace;
+      color: var(--accent-yellow);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .quotes { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+
+    .quote-card {
+      background: var(--accent-soft);
+      border-radius: 12px;
+      padding: 18px 22px;
+      border-left: 2.5px solid var(--accent-pink);
+    }
+
+    .quote-text {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .quote-attr {
+      font-size: 11.5px;
+      color: var(--accent-pink);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .takeaways { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+
+    .takeaway {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+    }
+
+    .takeaway-num {
+      min-width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 500;
+      color: #fff;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .takeaway strong { color: var(--text-primary); font-weight: 500; }
+
+    .links { display: flex; flex-direction: column; gap: 8px; }
+
+    .link-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 16px;
+      border-radius: 8px;
+      border: 0.5px solid var(--border);
+      background: var(--surface-raised);
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .link-row:hover { background: var(--accent-soft); border-color: var(--accent-purple); }
+
+    .link-title {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+
+    .link-sub { font-size: 12px; color: var(--text-muted); }
+    .link-arrow { font-size: 15px; color: var(--accent-purple); }
+
+    @media (max-width: 520px) {
+      h1 { font-size: 26px; }
+      .ts-row { grid-template-columns: 60px 1fr; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <p class="eyebrow"><strong><u>The Mindful Media Podcast</u></strong></p>
+    <h1>Reclaiming Your Time</h1>
+    <p class="subtitle">Mindful &amp; intentional living in the age of distraction</p>
+
+    <div class="meta">
+      <div class="meta-item"><div class="meta-dot"></div> ~10 minutes</div>
+      <div class="meta-item"><div class="meta-dot"></div> Mindfulness · Technology · Intentional living</div>
+      <div class="meta-item"><div class="meta-dot"></div> Solo episode</div>
+    </div>
+
+    <p class="section-label">Overview</p>
+    <p class="summary">
+      In this episode, we dig into what it really means to live <strong>mindfully and intentionally</strong> — and why so many of us are unknowingly surrendering our time to platforms built to hold our attention. We explore the structural forces behind our screen habits, draw on philosophy and self-reflection exercises, and offer <strong>practical first steps</strong> to start taking your time back.
+    </p>
+
+    <hr>
+
+    <p class="section-label">Timestamps</p>
+    <div class="timestamps">
+      <div class="ts-row">
+        <span class="ts-time">0:00</span>
+        <p class="ts-topic">Introduction</p>
+      </div>
+      <div class="ts-row">
+        <span class="ts-time">1:00</span>
+        <p class="ts-topic">Defining mindful &amp; intentional living</p>
+      </div>
+      <div class="ts-row">
+        <span class="ts-time">1:50</span>
+        <p class="ts-topic">The funeral exercise</p>
+      </div>
+      <div class="ts-row">
+        <span class="ts-time">2:50</span>
+        <p class="ts-topic">Why our time isn't entirely our own</p>
+      </div>
+      <div class="ts-row">
+        <span class="ts-time">5:00</span>
+        <p class="ts-topic">Power without a puppeteer — Foucault</p>
+      </div>
+      <div class="ts-row">
+        <span class="ts-time">6:58</span>
+        <p class="ts-topic">How to start reclaiming your time</p>
+      </div>
+      <div class="ts-row">
+        <span class="ts-time">9:38</span>
+        <p class="ts-topic">Closing thoughts &amp; the Ouroboros quote</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <p class="section-label">Key quotes</p>
+    <div class="quotes">
+      <div class="quote-card">
+        <p class="quote-text">"Power is not something that is acquired, seized, or shared… there is no power that is exercised without a series of aims and objectives, but this does not mean that it results from the choice or decision of an individual subject."</p>
+        <p class="quote-attr">Michel Foucault - <em>The History of Sexuality, Vol 1</em></p>
+      </div>
+      <div class="quote-card">
+        <p class="quote-text">"It is like Ouroboros, the snake that's eating itself. It is never going to end if we don't make a conscious choice of saying no."</p>
+        <p class="quote-attr">Vox Article: <em>Black Friday is a trap</em></p>
+      </div>
+    </div>
+
+    <hr>
+
+    <p class="section-label">References</p>
+    <div class="links">
+      <a class="link-row" href="https://www.franklincovey.com/books/the-7-habits-of-highly-effective-people/">
+        <div>
+          <p class="link-title">The 7 Habits of Highly Effective People</p>
+          <p class="link-sub">Stephen R. Covey — includes the funeral exercise</p>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+      <a class="link-row" href="https://www.amazon.com/Discipline-Punish-Prison-Michel-Foucault/dp/0679752552">
+        <div>
+          <p class="link-title">Discipline and Punish: The Birth of the Prison</p>
+          <p class="link-sub">Michel Foucault — On society &amp; control</p>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+      <a class="link-row" href="https://www.amazon.com/History-Sexuality-Vol-Introduction/dp/0679724699">
+        <div>
+          <p class="link-title">The History of Sexuality, Vol 1</p>
+          <p class="link-sub">Michel Foucault — On power</p>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+      <a class="link-row" href="https://www.vox.com/money/388152/black-friday-sales-bad-consumer-behavior-retailers-tariffs">
+        <div>
+          <p class="link-title">Black Friday is a trap</p>
+          <p class="link-sub">Vox - The Ouroboros quote</p>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+    </div>
+
+  </div>
+</body>
+</html>
